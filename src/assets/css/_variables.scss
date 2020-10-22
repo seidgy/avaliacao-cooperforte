@@ -6,3 +6,26 @@ $lc2: #DFE0DF;
 $dc: #613c00;
 $fontcolor: #404040;
 $fontrgb: rgb(64,64,64);
+$screen-sm: 768px;
+$screen-md: 1270px;
+$screen-sp: 1100px;
+@mixin md{
+    @media (max-width: #{$screen-md}){
+        @content;
+    }
+}
+@mixin sm{
+    @media (max-width: #{$screen-sm}){
+        @content;
+    }
+}
+@mixin sp{
+    @media (max-width: #{$screen-sp}){
+        @content;
+    }
+}
+@mixin min-md {
+    @media (min-width: #{$screen-sm}) {
+        @content;
+    }
+}

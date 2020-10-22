@@ -95,6 +95,14 @@
                           </div>
                         </b-col>
                       </b-row>
+                      <b-row>
+                        <b-col>
+                          <div class="dash-card">
+                            <h3 class="dash-title">Renda nos últimos 6 meses</h3>
+                            <highcharts :options="chartOptions"></highcharts>
+                          </div>
+                        </b-col>
+                      </b-row>
                     </b-col>
                     <b-col sm="12" md="3">
                       <b-row>
@@ -243,7 +251,57 @@ export default {
           valor_R$: '18,00',
           _rowVariant: 'sucess'
         },
-      ]
+      ],
+      chartOptions: {
+        title: {
+          text: ''
+        },
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        xAxis: {
+          categories: ['MAI/2020','JUN/2020','JUL/2020','AGO/2020','SET/2020','OUT/2020'],
+          title: {
+              text: 'Mês'
+          }
+        },
+        series: [{
+          name: 'Renda mensal',
+          data: [
+            4343.56,
+            4359.63,
+            4538.12,
+            4416.45,
+            4343.69,
+            4357.78,
+          ]
+        },
+        {
+          name: 'Saldo devedor',
+          data: [
+            5340.00,
+            4895.00,
+            4450.00,
+            4005.00,
+            3560.00,
+            3560.00,
+          ]
+        },
+        {
+          name: 'Saldo em aplicações',
+          data: [
+            430.00,
+            448.00,
+            465.00,
+            480.00,
+            497.00,
+            515.00,
+          ]
+        }
+        ]
+      }
     }
   },
   computed: {
